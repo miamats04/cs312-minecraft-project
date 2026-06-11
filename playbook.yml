@@ -1,0 +1,37 @@
+- name: Configure Minecraft Server
+  hosts: all
+  become: true
+
+  tasks:
+
+    - name: Update apt cache
+      apt:
+        update_cache: yes
+
+    - name: Install Docker
+      apt:
+        name: docker.io
+        state: present
+
+    - name: Enable Docker
+      service:
+        name: docker
+        state: started
+        enabled: yes
+
+    - name: Remove any existing Minecraft container
+      command: docker rm -f minecraft
+
+    - name: Run Minecraft
+      command: > 
+        docker run -d 
+        --name minecraft
+        -p 25565:25565 
+        -e EULA=TRUE 
+        --restart unless-stopped
+        -v minecraft-data:/data
+        itzg/minecraft-server
+      # -e EULA=TRUE: automatically accepts EULA file
+      # --restart unless-stopped: auto-start the server on reboots
+
+

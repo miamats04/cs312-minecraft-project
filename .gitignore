@@ -1,0 +1,11 @@
+# terraform
+.terraform/
+terraform.tfstate
+terraform.tfstate.backup
+hashicorp/
+
+# generated files
+inventory
+
+# private keys
+*.pem
