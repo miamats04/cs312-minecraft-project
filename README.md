@@ -41,7 +41,7 @@ Docker does not need to be installed locally because it is automatically install
 
 Clone the repository and navigate to the project directory.
 ```bash
-git clone <repository-url>
+git clone https://github.com/miamats04/cs312-minecraft-project
 cd minecraft-project2
 ```
 
