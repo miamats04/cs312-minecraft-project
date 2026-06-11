@@ -42,7 +42,7 @@ Docker does not need to be installed locally because it is automatically install
 Clone the repository and navigate to the project directory.
 ```bash
 git clone https://github.com/miamats04/cs312-minecraft-project
-cd minecraft-project2
+cd cs312-minecraft-project
 ```
 
 ### Step 2: Get AWS CLI Credentials
